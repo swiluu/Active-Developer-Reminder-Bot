@@ -1,4 +1,4 @@
-# Active Developer Reminder Bot
+# Discord Confirm Reminder Bot
 
 A simple Discord bot that reminds users every 25 days to type `/confirm` as a command.
 
@@ -12,18 +12,53 @@ A simple Discord bot that reminds users every 25 days to type `/confirm` as a co
 ## Prerequisites
 
 1. **Install Python**
-   - Download and install Python 3.8 or newer from [python.org](https://www.python.org/downloads/)
-   - Make sure to check "Add Python to PATH" during installation
-   - Verify installation by opening a terminal/command prompt and typing:
+
+   ### Windows
+   - Download the installer from [python.org](https://www.python.org/downloads/)
+   - Run the installer
+   - **Important**: Check "Add Python to PATH" during installation
+   - Choose "Customize installation" (optional)
+   - Click "Install Now"
+   - Verify installation by opening Command Prompt and typing:
      ```
      python --version
      ```
-   - If the above command doesn't work, try:
+
+   ### macOS
+   - Download the installer from [python.org](https://www.python.org/downloads/)
+   - Run the installer package
+   - Follow the installation wizard
+   - Verify installation by opening Terminal and typing:
      ```
      python3 --version
      ```
-   - You should see the Python version number if installation was successful
-   - Note: On some systems, particularly Linux and macOS, Python 3 is accessed using the `python3` command instead of `python`
+   - You can also install Python using Homebrew:
+     ```
+     brew install python
+     ```
+
+   ### Linux (Ubuntu/Debian)
+   - Python is usually pre-installed, but you can ensure you have the latest version:
+     ```
+     sudo apt update
+     sudo apt install python3 python3-pip
+     ```
+   - Verify installation:
+     ```
+     python3 --version
+     ```
+
+   ### Linux (CentOS/RHEL)
+   - Install Python 3:
+     ```
+     sudo yum install python3 python3-pip
+     ```
+   - Verify installation:
+     ```
+     python3 --version
+     ```
+
+   If you see the Python version number, installation was successful. If using Python 3.x, you may need to use `python3` and `pip3` commands instead of `python` and `pip`.
 
 ## Setup Instructions
 
@@ -48,7 +83,7 @@ A simple Discord bot that reminds users every 25 days to type `/confirm` as a co
 4. **Configure the Bot**
    - Edit the `.env` file to add your bot token
    - Replace `your_token_here` with your actual Discord bot token
-   - Remove `REMOVETHIS` after editing your `.env` file
+   - Remove `REMOVETHIS` from your `.env` file
 
 5. **Run the Bot**
    ```
@@ -91,7 +126,7 @@ To make the bot automatically start when your Linux server boots up, you can use
 
 1. **Create a Service File**:
    ```bash
-   sudo nano /etc/systemd/system/Active-Developer-Reminder-Bot.service
+   sudo nano /etc/systemd/system/discord-reminder.service
    ```
 
 2. **Add the Following Content** (adjust paths as needed):
@@ -103,7 +138,7 @@ To make the bot automatically start when your Linux server boots up, you can use
    [Service]
    User=your_username
    WorkingDirectory=/path/to/discord-confirm-reminder
-   ExecStart=/usr/bin/python3 /path/to/Active-Developer-Reminder-Bot/confirm_bot.py
+   ExecStart=/usr/bin/python3 /path/to/discord-confirm-reminder/confirm_bot.py
    Restart=always
    RestartSec=10
 
@@ -118,16 +153,18 @@ To make the bot automatically start when your Linux server boots up, you can use
 
 4. **Enable and Start the Service**:
    ```bash
-   sudo systemctl enable Active-Developer-Reminder.service
-   sudo systemctl start Active-Developer-Reminder.service
+   sudo systemctl enable discord-reminder.service
+   sudo systemctl start discord-reminder.service
    ```
 
 5. **Check Status**:
    ```bash
-   sudo systemctl status Active-Developer-Reminder.service
+   sudo systemctl status discord-reminder.service
    ```
 
 This will ensure your bot starts automatically when the server boots and restarts if it crashes.
+
+**Note**: Always remember to run `sudo systemctl daemon-reload` after making any changes to the service file. Without this step, systemd won't recognize your changes and may fail to start the service properly.
 
 ## License
 
