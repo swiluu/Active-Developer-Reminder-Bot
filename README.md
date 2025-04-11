@@ -9,6 +9,22 @@ A simple Discord bot that reminds users every 25 days to type `/confirm` as a co
 - Allows users to add or remove themselves from the reminder list
 - Provides information about when the next reminder will be sent
 
+## Prerequisites
+
+1. **Install Python**
+   - Download and install Python 3.8 or newer from [python.org](https://www.python.org/downloads/)
+   - Make sure to check "Add Python to PATH" during installation
+   - Verify installation by opening a terminal/command prompt and typing:
+     ```
+     python --version
+     ```
+   - If the above command doesn't work, try:
+     ```
+     python3 --version
+     ```
+   - You should see the Python version number if installation was successful
+   - Note: On some systems, particularly Linux and macOS, Python 3 is accessed using the `python3` command instead of `python`
+
 ## Setup Instructions
 
 1. **Create a Discord Bot**
@@ -38,6 +54,10 @@ A simple Discord bot that reminds users every 25 days to type `/confirm` as a co
    ```
    python confirm_bot.py
    ```
+   If the above command doesn't work, try:
+   ```
+   python3 confirm_bot.py
+   ```
 
 ## Usage
 
@@ -54,6 +74,17 @@ If slash commands aren't appearing:
 - Restart your Discord client
 - Wait a few minutes as Discord can take time to register commands
 
-## Note
+## Hosting Options
 
-The bot needs to be running continuously to send reminders. Consider hosting it on a server or using a service like Heroku for 24/7 operation.
+The bot needs to be running continuously to send reminders. Here are some hosting options:
+
+1. **Local Computer**: Only works when your computer is on
+2. **VPS (Virtual Private Server)**: Services like DigitalOcean, Linode, or AWS
+3. **PythonAnywhere**: Free tier available, good for small bots
+4. **Railway.app**: Easy deployment, free tier available
+5. **Replit**: Free hosting with some limitations
+6. **Heroku**: Free tier discontinued, but paid options available
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
