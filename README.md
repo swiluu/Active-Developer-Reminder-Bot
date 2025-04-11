@@ -32,6 +32,7 @@ A simple Discord bot that reminds users every 25 days to type `/confirm` as a co
 4. **Configure the Bot**
    - Edit the `.env` file to add your bot token
    - Replace `your_token_here` with your actual Discord bot token
+   - Remove "REMOTETHIS" and the ending .example after editing your `.env` file
 
 5. **Run the Bot**
    ```
