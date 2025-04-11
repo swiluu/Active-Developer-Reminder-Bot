@@ -1,4 +1,4 @@
-# Discord Confirm Reminder Bot
+# Active Developer Reminder Bot
 
 A simple Discord bot that reminds users every 25 days to type `/confirm` as a command.
 
