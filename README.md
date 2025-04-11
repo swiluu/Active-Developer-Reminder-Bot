@@ -85,6 +85,50 @@ The bot needs to be running continuously to send reminders. Here are some hostin
 5. **Replit**: Free hosting with some limitations
 6. **Heroku**: Free tier discontinued, but paid options available
 
+## Auto-Start on Linux Server
+
+To make the bot automatically start when your Linux server boots up, you can use systemd:
+
+1. **Create a Service File**:
+   ```bash
+   sudo nano /etc/systemd/system/discord-reminder.service
+   ```
+
+2. **Add the Following Content** (adjust paths as needed):
+   ```
+   [Unit]
+   Description=Discord Reminder Bot
+   After=network.target
+
+   [Service]
+   User=your_username
+   WorkingDirectory=/path/to/discord-confirm-reminder
+   ExecStart=/usr/bin/python3 /path/to/discord-confirm-reminder/confirm_bot.py
+   Restart=always
+   RestartSec=10
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+3. **Reload the systemd daemon** (important step!):
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+4. **Enable and Start the Service**:
+   ```bash
+   sudo systemctl enable discord-reminder.service
+   sudo systemctl start discord-reminder.service
+   ```
+
+5. **Check Status**:
+   ```bash
+   sudo systemctl status discord-reminder.service
+   ```
+
+This will ensure your bot starts automatically when the server boots and restarts if it crashes.
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
