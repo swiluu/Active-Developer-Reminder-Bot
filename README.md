@@ -91,7 +91,7 @@ To make the bot automatically start when your Linux server boots up, you can use
 
 1. **Create a Service File**:
    ```bash
-   sudo nano /etc/systemd/system/discord-reminder.service
+   sudo nano /etc/systemd/system/Active-Developer-Reminder-Bot.service
    ```
 
 2. **Add the Following Content** (adjust paths as needed):
@@ -103,7 +103,7 @@ To make the bot automatically start when your Linux server boots up, you can use
    [Service]
    User=your_username
    WorkingDirectory=/path/to/discord-confirm-reminder
-   ExecStart=/usr/bin/python3 /path/to/discord-confirm-reminder/confirm_bot.py
+   ExecStart=/usr/bin/python3 /path/to/Active-Developer-Reminder-Bot/confirm_bot.py
    Restart=always
    RestartSec=10
 
@@ -118,13 +118,13 @@ To make the bot automatically start when your Linux server boots up, you can use
 
 4. **Enable and Start the Service**:
    ```bash
-   sudo systemctl enable discord-reminder.service
-   sudo systemctl start discord-reminder.service
+   sudo systemctl enable Active-Developer-Reminder.service
+   sudo systemctl start Active-Developer-Reminder.service
    ```
 
 5. **Check Status**:
    ```bash
-   sudo systemctl status discord-reminder.service
+   sudo systemctl status Active-Developer-Reminder.service
    ```
 
 This will ensure your bot starts automatically when the server boots and restarts if it crashes.
